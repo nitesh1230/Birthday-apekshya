@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday Apekshya! 🎉</title>
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff7ab6;
+      --accent2:#7ae1ff;
+      --text:#e6f0ff;
+    }
+    * {box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;background:radial-gradient(circle at 10% 10%, rgba(122,225,255,0.06), transparent 10%), linear-gradient(180deg,#021026 0%, #071025 50%, #071225 100%);color:var(--text)}
+    .wrap{min-height:100%;display:flex;align-items:center;justify-content:center;padding:36px}
+    .card{width:100%;max-width:920px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(2,8,23,0.7);position:relative;overflow:hidden}
+    header{display:flex;gap:18px;align-items:center}
+    .avatar{width:96px;height:96px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:#031827;box-shadow:0 6px 16px rgba(122,170,255,0.08)}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0 18px;color:rgba(230,240,255,0.9)}
+    .content{display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start}
+    .message{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .message p{line-height:1.5;margin:0 0 12px}
+    .btns{display:flex;gap:10px;margin-top:8px}
+    .btn{background:var(--accent);color:#031827;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600;box-shadow:0 8px 18px rgba(255,122,182,0.12)}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--text);box-shadow:none}
+    .right{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.03)}
+    .balloons{display:flex;gap:10px;justify-content:center;align-items:center;padding:10px}
+    .balloon{width:70px;height:100px;border-radius:70% 70% 50% 50%/90% 90% 10% 10%;position:relative;margin:6px;transform-origin:bottom center;animation:float 4s ease-in-out infinite}
+    .balloon:after{content:'';position:absolute;bottom:-22px;left:50%;width:2px;height:22px;background:linear-gradient(180deg,#999,transparent);transform:translateX(-50%)}
+    .b1{background:linear-gradient(180deg,#ff9ecf,#ff6aa6);animation-duration:4s}
+    .b2{background:linear-gradient(180deg,#7ae1ff,#4da7ff);animation-duration:4.5s}
+    .b3{background:linear-gradient(180deg,#ffd87a,#ffb04d);animation-duration:3.8s}
+    @keyframes float{0%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-12px) rotate(3deg)}100%{transform:translateY(0) rotate(-2deg)}}
+    .confetti-piece{position:absolute;width:10px;height:18px;opacity:0.95;border-radius:2px;transform:translateY(-50vh);animation:fell 2.6s linear infinite}
+    @keyframes fell{0%{transform:translateY(-20vh) rotate(0) scale(1)}100%{transform:translateY(60vh) rotate(720deg) scale(1)}}
+    footer{display:flex;justify-content:space-between;align-items:center;margin-top:16px;color:rgba(230,240,255,0.7);font-size:14px}
+    .sparkle{display:inline-block;margin-left:8px;transform-origin:center;animation:spin 3s linear infinite}
+    @keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+    /* Responsive */
+    @media (max-width:880px){.content{grid-template-columns:1fr;}.right{order:2}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" id="card">
+      <!-- Confetti pieces -->
+      <div id="confetti"></div>
+
+      <header>
+        <div class="avatar">A</div>
+        <div>
+          <h1>Happy Birthday, Apekshya! 🎂</h1>
+          <p class="lead">Wishing you a day filled with love, laughter, and everything that makes you smile.</p>
+        </div>
+      </header>
+
+      <div class="content" style="margin-top:16px">
+        <div class="message">
+          <p>Hey <strong>Apekshya</strong> —</p>
+          <p>Today is your day! I'm wishing you a year ahead full of bright moments, big adventures, and peaceful little joys. Thank you for being such a wonderful friend. 💖</p>
+          <p>May every wish you make today come true. Keep shining, keep smiling, and never stop chasing what makes your heart happy.</p>
+          <div class="btns">
+            <button class="btn" id="wishBtn">🎉 Send my wish</button>
+            <button class="btn secondary" id="copyBtn">🔗 Copy page link</button>
+          </div>
+        </div>
+
+        <aside class="right">
+          <div style="text-align:center">
+            <div class="balloons" aria-hidden="true">
+              <div class="balloon b1"></div>
+              <div class="balloon b2"></div>
+              <div class="balloon b3"></div>
+            </div>
+            <h3 style="margin:8px 0 4px">Make a wish!</h3>
+            <p style="margin:0 0 12px;color:rgba(230,240,255,0.8)">Click "Send my wish" to show a special message and confetti just for you.</p>
+            <div style="display:flex;gap:6px;justify-content:center">
+              <button class="btn" id="songBtn">🎵 Play music</button>
+              <button class="btn secondary" id="bgBtn">✨ Toggle theme</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        <div>Made with ❤️ especially for <strong>Apekshya</strong></div>
+        <div>From your friend — <em>Nitesh</em> <span class="sparkle">✨</span></div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // Create confetti pieces
+    const confettiEl = document.getElementById('confetti');
+    const colors = ['#FF7AB6','#7AE1FF','#FFD87A','#A3FFB0','#D7B3FF'];
+    for(let i=0;i<28;i++){
+      const d = document.createElement('div');
+      d.className = 'confetti-piece';
+      d.style.left = (5 + Math.random()*90) + '%';
+      d.style.background = colors[i % colors.length];
+      d.style.animationDelay = (Math.random()*1.6) + 's';
+      d.style.opacity = 0;
+      d.style.top = '-40px';
+      d.style.transform = 'translateY(-50vh)';
+      confettiEl.appendChild(d);
+    }
+
+    function burstConfetti(){
+      const pieces = document.querySelectorAll('.confetti-piece');
+      pieces.forEach((p, idx) => {
+        p.style.opacity = 1;
+        p.style.animation = 'fell 2.2s linear forwards';
+        p.style.animationDelay = (Math.random()*0.5) + 's';
+        // random rotation and speed
+        p.style.transform = 'translateY(-50vh) rotate(' + (Math.random()*360) + 'deg)';
+      });
+      setTimeout(()=>{ // reset after a bit
+        pieces.forEach(p=>{
+          p.style.opacity = 0;
+          p.style.animation = '';
+        })
+      }, 2800);
+    }
+
+    // Wish button interaction
+    document.getElementById('wishBtn').addEventListener('click', ()=>{
+      const card = document.getElementById('card');
+      // small popup
+      const pop = document.createElement('div');
+      pop.style.position='fixed';
+      pop.style.left='50%';
+      pop.style.top='18%';
+      pop.style.transform='translateX(-50%)';
+      pop.style.background='linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))';
+      pop.style.border='1px solid rgba(255,255,255,0.04)';
+      pop.style.padding='18px';
+      pop.style.borderRadius='12px';
+      pop.style.boxShadow='0 12px 30px rgba(2,8,23,0.7)';
+      pop.style.zIndex = 9999;
+      pop.innerHTML = '<h2 style="margin:0 0 6px">Happy Birthday, Apekshya! 🎉</h2><p style="margin:0 0 8px">Wishing you an amazing year ahead — full of new dreams and happy memories.</p><div style="text-align:right"><button id="closePop" style="padding:8px 12px;border-radius:8px;border:none;cursor:pointer;background:var(--accent);color:#031827;font-weight:700">Close</button></div>';
+      document.body.appendChild(pop);
+      burstConfetti();
+      document.getElementById('closePop').addEventListener('click', ()=>pop.remove());
+    });
+
+    // Copy page link (works if hosted) or fallback to copying page HTML data URL
+    document.getElementById('copyBtn').addEventListener('click', async ()=>{
+      try{
+        const url = location.href;
+        await navigator.clipboard.writeText(url);
+        alert('Page link copied! You can paste it and send it to Apekshya.');
+      }catch(e){
+        // fallback: copy simple message
+        const fallback = "Happy Birthday Apekshya! Open the page file I sent you (the HTML file).";
+        try{ await navigator.clipboard.writeText(fallback); alert('Link copied (fallback message).'); }catch{ alert('Unable to copy link.'); }
+      }
+    });
+
+    // Play a short built-in tone sequence (no external audio)
+    let playing = false;
+    document.getElementById('songBtn').addEventListener('click', async ()=>{
+      if(playing){ playing=false; return; }
+      playing = true;
+      // create simple melody using WebAudio
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const notes = [523,659,784,523,784,659,523]; // simple beepy tune
+      let t = ctx.currentTime;
+      for(let i=0;i<notes.length;i++){
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type='sine';
+        o.frequency.setValueAtTime(notes[i], t + i*0.25);
+        g.gain.setValueAtTime(0.0001, t + i*0.25);
+        g.gain.exponentialRampToValueAtTime(0.15, t + i*0.25 + 0.01);
+        g.gain.exponentialRampToValueAtTime(0.0001, t + i*0.25 + 0.22);
+        o.connect(g); g.connect(ctx.destination);
+        o.start(t + i*0.25);
+        o.stop(t + i*0.25 + 0.24);
+      }
+      setTimeout(()=>{ playing=false; }, notes.length*300);
+    });
+
+    // Theme toggle (lightens card slightly)
+    document.getElementById('bgBtn').addEventListener('click', ()=>{
+      document.documentElement.style.setProperty('--accent', (getComputedStyle(document.documentElement).getPropertyValue('--accent').trim()==='#ff7ab6') ? '#ffd87a' : '#ff7ab6');
+      document.documentElement.style.setProperty('--accent2', (getComputedStyle(document.documentElement).getPropertyValue('--accent2').trim()==='#7ae1ff') ? '#a3ffb0' : '#7ae1ff');
+    });
+
+    // Small entrance animation
+    window.onload = ()=> {
+      document.getElementById('card').style.transform = 'translateY(6px)';
+      setTimeout(()=>{ document.getElementById('card').style.transform = 'translateY(0px)'; }, 120);
+    }
+  </script>
+</body>
+</html>
